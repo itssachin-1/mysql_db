@@ -662,6 +662,35 @@ mysql> select deptno, empname, hiredate from emp where(deptno, hiredate) in (sel
 |     20 | ADAMS   | 1987-05-23 |
 +--------+---------+------------+
 3 rows in set (0.00 sec)
+
+
+mysql> —- Display the details of employees hired between Jan and June.
+mysql> select * from emp where month(hiredate) between 1 and 6;
++-------+---------+----------+------+------------+---------+--------+--------+
+| empno | empname | job      | mgr  | hiredate   | sal     | comm   | deptno |
++-------+---------+----------+------+------------+---------+--------+--------+
+|  7499 | ALLEN   | SALESMAN | 7698 | 1981-02-20 | 1600.00 | 300.00 |     30 |
+|  7521 | WARD    | SALESMAN | 7698 | 1981-02-22 | 1250.00 | 500.00 |     30 |
+|  7566 | JONES   | MANAGER  | 7839 | 1981-04-02 | 2975.00 |   NULL |     20 |
+|  7698 | BLAKE   | MANAGER  | 7839 | 1981-05-01 | 2850.00 |   NULL |     30 |
+|  7782 | CLARK   | MANAGER  | 7839 | 1981-06-09 | 2450.00 |   NULL |     10 |
+|  7788 | SCOTT   | ANALYST  | 7566 | 1987-04-19 | 3000.00 |   NULL |     20 |
+|  7876 | ADAMS   | CLERK    | 7788 | 1987-05-23 | 1100.00 |   NULL |     20 |
+|  7934 | MILLER  | CLERK    | 7782 | 1982-01-23 | 1300.00 |   NULL |     10 |
++-------+---------+----------+------+------------+---------+--------+--------+
+8 rows in set (0.00 sec)
+
+mysql> -- Display the count, total salary and average salary of all employees in each department.
+mysql> select deptno, count(*), sum(sal+ ifnull(comm, 0)) as total_sal, avg(sal) from emp group by deptno;
++--------+----------+-----------+-------------+
+| deptno | count(*) | total_sal | avg(sal)    |
++--------+----------+-----------+-------------+
+|     20 |        5 |  10875.00 | 2175.000000 |
+|     30 |        6 |  11600.00 | 1566.666667 |
+|     10 |        3 |   8750.00 | 2916.666667 |
++--------+----------+-----------+-------------+
+3 rows in set (0.00 sec)
+
 mysql> -- Find a square root of the number 36.1111. The result should not contain any decimal spaces.
 mysql> select round(sqrt(36.1111));
 +----------------------+

@@ -9,10 +9,11 @@ mysql start/login command: mysql -u root -p</br>
 Password: ********
 
 **Following are some of the helpful commands:**<br>
-**mysql**&emsp;&emsp; 		**client commands**</br>
-? &emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;        (\?) for `help'.</br>
-clear&emsp;&emsp;&nbsp;&nbsp;&nbsp;     (\c) Clear the current input statement.</br>
-connect&emsp;&nbsp;   (\r) Reconnect to the server. Optional arguments are db and host.</br>
-exit&emsp;&emsp;&emsp;&nbsp;       (\q) Exit mysql. Same as quit.</br>
-help&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;      (\h) Display this help.</br>
-status&emsp;&emsp;&nbsp;    (\s) Get status information from the server.</br>
+| mysql             | client commands                                                                |
+| ----------------- | ------------------------------------------------------------------ |
+?           |(?) for `help'.
+clear       |(\c) Clear the current input statement.
+connect     |(\r) Reconnect to the server. Optional arguments are db and host.
+exit        |(\q) Exit mysql. Same as quit.
+help        |(\h) Display this help.
+status      |(\s) Get status information from the server.
